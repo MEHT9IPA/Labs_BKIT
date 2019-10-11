@@ -39,7 +39,7 @@ namespace Lab_1
         {
             Console.Title = "Аникин Филипп, ИУ5-33Б";
             Console.SetWindowSize(100, Console.WindowHeight);
-            double A = 0, B = 0, C = 0, discr;
+            double A=0, B=0, C=0, discr;
 
             if (args.Length == 0)
             {
@@ -75,12 +75,12 @@ namespace Lab_1
 
             if (A != 0)
             {
-                discr = B * B - 4 * A * C;
+                discr = B*B - 4*A*C;
                 Console.WriteLine($"D={discr}");
                 if (discr >= 0)
                 {
                     B = -B;
-                    A = A+A;
+                    A += A;
                     discr = Math.Sqrt(discr);
                     double Q1 = (B + discr)/A;
                     double Q2 = (B - discr)/A;
@@ -129,7 +129,7 @@ namespace Lab_1
             {
                 if (B != 0)
                 {
-                    double Q = -C / B;
+                    double Q = -C/B;
                     if (Q >= 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
