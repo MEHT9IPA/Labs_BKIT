@@ -72,11 +72,11 @@ namespace Lab_1
                 Args_incorrect();
             }
             Console.WriteLine($"A={A}; B={B}; C={C}");
+            discr = B * B - 4 * A * C;
+            Console.WriteLine($"D={discr}");
 
             if (A != 0)
             {
-                discr = B*B - 4*A*C;
-                Console.WriteLine($"D={discr}");
                 if (discr >= 0)
                 {
                     B = -B;
