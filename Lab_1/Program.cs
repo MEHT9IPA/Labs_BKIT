@@ -28,10 +28,17 @@ namespace Lab_1
             Console.ReadKey();
             Environment.Exit(0);
         }
+        static void No_solutions()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Действительных корней нет");
+            Console.ResetColor();
+        }
 
-            static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.Title = "Аникин Филипп, ИУ5-33Б";
+            Console.SetWindowSize(100, Console.WindowHeight);
             double A = 0, B = 0, C = 0, discr;
 
             if (args.Length == 0)
@@ -64,9 +71,91 @@ namespace Lab_1
             {
                 Args_incorrect();
             }
-
-            
             Console.WriteLine($"A={A}; B={B}; C={C}");
+
+            if (A != 0)
+            {
+                discr = B * B - 4 * A * C;
+                Console.WriteLine($"D={discr}");
+                if (discr >= 0)
+                {
+                    B = -B;
+                    A = A+A;
+                    discr = Math.Sqrt(discr);
+                    double Q1 = (B + discr)/A;
+                    double Q2 = (B - discr)/A;
+                    discr = -1;
+
+                    if (Q1 >= 0)
+                    {
+                        discr = 1;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Q1 = Math.Sqrt(Q1);
+                        Console.Write($"X{discr++}={Q1}; X{discr++}={-Q1}");
+                        Console.ResetColor();
+                    }
+                    if (Q2 >= 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Q2 = Math.Sqrt(Q2);
+                        if (discr != -1)
+                        {
+                            Console.Write("; ");
+                        }
+                        else
+                        {
+                            discr = 1;
+                        }
+                        Console.Write($"X{discr++}={Q2}; X{discr}={-Q2}");
+                        Console.ResetColor();
+                    }
+
+
+                    if (discr == -1)
+                    {
+                        No_solutions();
+                    }
+                    else
+                    {
+                        Console.WriteLine("");
+                    }
+                }
+                else
+                {
+                    No_solutions();
+                }
+            }
+            else
+            {
+                if (B != 0)
+                {
+                    double Q = -C / B;
+                    if (Q >= 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Q = Math.Sqrt(Q);
+                        Console.WriteLine($"X1={-Q}; X2={Q}");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        No_solutions();
+                    }
+                }
+                else
+                {
+                    if (C != 0)
+                    {
+                        No_solutions();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Решение — любое число");
+                        Console.ResetColor();
+                    }
+                }
+            }
             Console.Write("Нажмите любую клавишу для завершения...");
             Console.ReadKey();
         }
