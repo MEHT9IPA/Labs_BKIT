@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_2
 {
-    class Program
+    abstract class Geometric_figure
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
