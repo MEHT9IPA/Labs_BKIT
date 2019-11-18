@@ -8,5 +8,7 @@ namespace Lab_2
 {
     abstract class Geometric_figure
     {
+        public string Type { get; protected set; }
+        public abstract double Area();
     }
 }
