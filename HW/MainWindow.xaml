@@ -1,0 +1,24 @@
+﻿<Window x:Class="HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="391.804" Width="586.475">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#A2EF00" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Открыть файл" HorizontalAlignment="Left" Margin="421,32,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click"/>
+        <Label x:Name="timeLabel" Content="" HorizontalAlignment="Left" Margin="292,28,0,0" VerticalAlignment="Top" Width="124" Background="#FFEEFFCA"/>
+        <TextBox x:Name="findBox" HorizontalAlignment="Left" Height="23" Margin="370,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+        <Button Content="Найти" HorizontalAlignment="Left" Margin="386,115,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <RichTextBox x:Name="textBox" HorizontalAlignment="Left" Height="295" Margin="10,5,0,0" VerticalAlignment="Top" Width="265" />
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="100" Margin="292,142,0,0" VerticalAlignment="Top" Width="245"/>
+        <Label x:Name="findTime" Content="" HorizontalAlignment="Left" Margin="370,56,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBox x:Name="LevInt" HorizontalAlignment="Left" Height="26" Margin="315,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="29"/>
+        <TextBox x:Name="kol" HorizontalAlignment="Left" Height="25" Margin="338,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29"/>
+        <Button x:Name="Pseach" Content="Parallel" HorizontalAlignment="Left" Height="30" Margin="386,255,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="246,323,0,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
+        <Label x:Name="findTimeP" Content="" HorizontalAlignment="Left" Margin="370,304,0,0" VerticalAlignment="Top" Width="106"/>
+    </Grid>
+</Window>
