@@ -16,7 +16,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 
-namespace Lab_4
+namespace Lab_5
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -67,22 +67,30 @@ namespace Lab_4
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string find = findBox.Text;
-            Stopwatch t = new Stopwatch();
-            t.Start();
-            if (list.Contains(find))
+            if (find == "")
             {
-                this.listBox.Items.Add(find);
+                System.Windows.MessageBox.Show("Введите слово для поиска");
             }
             else
             {
-                System.Windows.MessageBox.Show("Такого слова нет"); ;
-            };
-            t.Stop();
-            this.findTime.Content = t.Elapsed.ToString();
+                int lev = (int.TryParse(LevInt.Text, out lev)) ? lev : 0;
+                Stopwatch t = new Stopwatch();
+                t.Start();
+                bool finded = false;
+                foreach (string seachword in list)
+                {
+                    int levn = FindLevn.Distance(find, seachword);
+                    if (levn <= lev)
+                        this.listBox.Items.Add(seachword); finded = true;
+
+
+                }
+                if (finded == false)
+                    System.Windows.MessageBox.Show("Такого слова нет");
+                t.Stop();
+
+                this.findTime.Content = t.Elapsed.ToString();
+            }
         }
-
-
-
-
     }
 }
